@@ -1,3 +1,4 @@
+// open source server-side api code can be found here: https://github.com/idriss-crypto/backend_api
 export const BASE_API_URL = 'https://api.idriss.xyz/';
 
 export const POLYGON_RPC_URL = 'https://polygon-rpc.com/';
