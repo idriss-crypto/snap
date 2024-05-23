@@ -1,0 +1,24 @@
+{
+  "version": "0.1.0",
+  "description": "Multi Resolver Snap",
+  "proposedName": "IDriss Multi Resolver",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MetaMask/template-snap-monorepo.git"
+  },
+  "source": {
+    "shasum": "xqpa+r2mForuas0A6leEGSNWbsr6XFfA78Oih+iFxS8=",
+    "location": {
+      "npm": {
+        "filePath": "dist/bundle.js",
+        "packageName": "snap",
+        "registry": "https://registry.npmjs.org/"
+      }
+    }
+  },
+  "initialPermissions": {
+    "endowment:name-lookup": {},
+    "endowment:network-access": {}
+  },
+  "manifestVersion": "0.1"
+}
