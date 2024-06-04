@@ -13,19 +13,16 @@ const client = new LensClient({
  */
 export async function resolveLensProfile(
   domain: string,
-): Promise<{ resolvedAddress: any; protocol: string }[]> {
+): Promise<{ resolvedAddress: string; protocol: string }[]> {
   try {
     const handle = domain.replace('@', '').replace('.lens', '');
 
     const lensHandle = `lens/${handle}`;
 
-    console.log('resolving lens: ', lensHandle);
-
     // Resolve the address using LensClient
     const address = await client.handle.resolveAddress({ handle: lensHandle });
-    console.log('Lens result is', address);
     if (address) {
-      return [{ resolvedAddress: address, protocol: 'Lens Protocol' }];
+      return [{ resolvedAddress: address, protocol: 'Lens' }];
     }
     return [];
   } catch (error) {

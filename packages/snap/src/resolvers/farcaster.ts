@@ -9,7 +9,7 @@ import { BASE_API_URL } from '../constants';
  */
 export async function resolveFarcasterName(
   domain: string,
-): Promise<{ resolvedAddress: any; protocol: string }[]> {
+): Promise<{ resolvedAddress: string; protocol: string }[]> {
   try {
     let userFID: string;
     let connectedAddress = '';
@@ -27,18 +27,14 @@ export async function resolveFarcasterName(
       } else {
         return [];
       }
-      console.log('user ID:', userFID);
-    } catch (exception) {
-      console.log(exception);
+    } catch {
       return [];
     }
 
     const ADDRESS_URL = `${BASE_API_URL}get-connected-addresses?fid=${userFID}`;
     const addressResponse = await fetch(ADDRESS_URL);
     const addressData = await addressResponse.json();
-    console.log('got addresses: ', addressData);
     const { result } = addressData;
-    console.log('Resulting addresses', result);
     if (result?.verifications && result.verifications.length > 0) {
       for (const verification of result.verifications) {
         if (verification.protocol === 'ethereum') {
@@ -47,7 +43,6 @@ export async function resolveFarcasterName(
         }
       }
     }
-    console.log('connectedAddress:', connectedAddress);
 
     if (connectedAddress) {
       return [{ resolvedAddress: connectedAddress, protocol: 'Farcaster' }];

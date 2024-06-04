@@ -14,17 +14,14 @@ const provider = new JsonRpcProvider(ETHEREUM_RPC_URL);
  */
 export async function resolveENS(
   domain: string,
-): Promise<{ resolvedAddress: any; protocol: string }[]> {
+): Promise<{ resolvedAddress: string; protocol: string }[]> {
   const resolvedENS = await provider.resolveName(domain);
-  console.log('resolved ', resolvedENS);
-  // if it comes here, then it's not a contract.
   if (!resolvedENS) {
     return [];
   }
   try {
     const code = await provider.getCode(resolvedENS);
     if (code !== '0x') {
-      console.log('detected code, is contract', code);
       return [];
     }
   } catch (error) {

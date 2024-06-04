@@ -29,7 +29,7 @@ const resolverContract = contract as IDrissResolver;
 export async function resolveIDriss(
   userInput: string,
   resolveOptions: ResolveOptions = {},
-): Promise<{ resolvedAddress: any; protocol: string }[]> {
+): Promise<{ resolvedAddress: string; protocol: string }[]> {
   const identifier = await transformIdentifier(userInput);
   const filteredWalletTags = filterWalletTags(resolveOptions);
 
@@ -71,6 +71,6 @@ export async function resolveIDriss(
   }
 
   const publicETH = entries.find((entry) => entry[0] === 'Public ETH');
-  const resolvedIDriss = publicETH?.[1] ?? entries[0]?.[1] ?? [];
+  const resolvedIDriss = publicETH?.[1] ?? entries[0]?.[1] ?? '';
   return [{ resolvedAddress: resolvedIDriss, protocol: 'IDriss' }];
 }

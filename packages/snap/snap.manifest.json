@@ -4,14 +4,15 @@
   "proposedName": "IDriss Multi Resolver",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MetaMask/template-snap-monorepo.git"
+    "url": "https://github.com/lennardevertz/snap/tree/main/packages/snap"
   },
   "source": {
-    "shasum": "xqpa+r2mForuas0A6leEGSNWbsr6XFfA78Oih+iFxS8=",
+    "shasum": "qnUOGuL7Ux8ukMnMsyO9k4WW7MKx4Gi9iQcI8VxWbmA=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
-        "packageName": "snap",
+        "iconPath": "img/IDriss_Brandmark.svg",
+        "packageName": "idriss-multi-resolver",
         "registry": "https://registry.npmjs.org/"
       }
     }

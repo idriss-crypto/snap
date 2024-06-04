@@ -9,12 +9,12 @@ import { BASE_API_URL } from '../constants';
  */
 export async function resolveUnstoppableDomain(
   domain: string,
-): Promise<{ resolvedAddress: any; protocol: string }[]> {
+): Promise<{ resolvedAddress: string; protocol: string }[]> {
   const response = await fetch(
     `${BASE_API_URL}resolve-unstoppable-domains?domain=${domain}`,
   );
   const data = await response.json();
-  const resolvedAddress = data.records['crypto.ETH.address'];
+  const resolvedAddress = data.records['crypto.ETH.address'] as string;
   if (resolvedAddress) {
     return [{ resolvedAddress, protocol: 'Unstoppable Domains' }];
   }

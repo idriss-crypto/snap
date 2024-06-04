@@ -1,8 +1,6 @@
-# TypeScript Example Snap
+# IDriss Multi Resolver Snap
 
-This snap demonstrates how to develop a snap with TypeScript. It is a simple
-snap that displays a confirmation dialog when the `hello` JSON-RPC method is
-called.
+This snap can be used to resolve several naming services in the sending input field of your MetaMask wallet. 
 
 ## Testing
 

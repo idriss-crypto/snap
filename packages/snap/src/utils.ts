@@ -29,7 +29,7 @@ const convertPhone = (input: string) => {
 const getTwitterID = async (inputCombination: string): Promise<string> => {
   const response = await fetch(
     `${BASE_API_URL}get-twitter-id?identifier=${encodeURIComponent(
-      inputCombination,
+      inputCombination.toLowerCase(),
     )}`,
   );
   if (response.status !== 200) {

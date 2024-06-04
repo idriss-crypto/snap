@@ -8,7 +8,7 @@
  * @returns The result of `snap_dialog`.
  * @throws If the request method is not valid for this snap.
  */
-import type { OnNameLookupHandler } from '@metamask/snaps-types';
+import type { OnNameLookupHandler } from '@metamask/snaps-sdk';
 
 import { REG_PH, REG_M, REG_T, UNSTOPPABLE_TLDS } from './constants';
 import { resolveENS } from './resolvers/ens';
@@ -17,15 +17,10 @@ import { resolveIDriss } from './resolvers/idriss';
 import { resolveLensProfile } from './resolvers/lens';
 import { resolveUnstoppableDomain } from './resolvers/unstoppable_domains';
 
-let currentTime = new Date();
-
 export const onNameLookup: OnNameLookupHandler = async (request: {
   chainId: string;
   domain?: string;
 }) => {
-  console.log('Current Time:', currentTime);
-  currentTime = new Date();
-
   const { domain } = request;
 
   let customResolverAddress: any;
@@ -34,25 +29,19 @@ export const onNameLookup: OnNameLookupHandler = async (request: {
       const resolvedIDriss = await resolveIDriss(domain);
       customResolverAddress = resolvedIDriss;
     } else if (domain?.endsWith('.lens')) {
-      console.log('resolving lens', domain);
       const resolvedLens = await resolveLensProfile(domain);
       customResolverAddress = resolvedLens;
     } else if (domain.endsWith('.fc') || domain.endsWith('.farcaster')) {
-      console.log('Resolving Farcaster name', domain);
       const resolvedFarcaster = await resolveFarcasterName(domain);
       customResolverAddress = resolvedFarcaster;
     } else {
-      console.log('resolving ens');
       const resolvedENS = await resolveENS(domain);
-      console.log('result after return', resolvedENS[0]);
       customResolverAddress = resolvedENS;
     }
-    console.log('Custom result currently', customResolverAddress);
     if (
-      !customResolverAddress &&
+      customResolverAddress.length === 0 &&
       UNSTOPPABLE_TLDS.some((tld) => domain.endsWith(`.${tld}`))
     ) {
-      console.log('resolving UD', domain);
       const resolvedUnstoppableDomains = await resolveUnstoppableDomain(domain);
       customResolverAddress = resolvedUnstoppableDomains;
     }
@@ -60,6 +49,5 @@ export const onNameLookup: OnNameLookupHandler = async (request: {
   if (customResolverAddress.length === 0) {
     return null;
   }
-  console.log('resolvedAddress is', customResolverAddress);
   return { resolvedAddresses: customResolverAddress };
 };
