@@ -1,7 +1,7 @@
 {
-  "name": "idriss-multi-resolver",
+  "name": "idriss-snap",
   "version": "0.1.0",
-  "description": "Multi Resolver Snap",
+  "description": "Use your favorite name services in MetaMask",
   "repository": {
     "type": "git",
     "url": "https://github.com/lennardevertz/snap/tree/main/packages/snap"

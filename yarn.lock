@@ -13598,9 +13598,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"idriss-multi-resolver@workspace:packages/snap":
+"idriss-snap@workspace:packages/snap":
   version: 0.0.0-use.local
-  resolution: "idriss-multi-resolver@workspace:packages/snap"
+  resolution: "idriss-snap@workspace:packages/snap"
   dependencies:
     "@jest/globals": ^29.5.0
     "@lens-protocol/client": ^2.2.0

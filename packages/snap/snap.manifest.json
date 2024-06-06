@@ -1,18 +1,18 @@
 {
   "version": "0.1.0",
-  "description": "Multi Resolver Snap",
-  "proposedName": "IDriss Multi Resolver",
+  "description": "Use your favorite name services in MetaMask",
+  "proposedName": "Web3 Address Book",
   "repository": {
     "type": "git",
     "url": "https://github.com/lennardevertz/snap/tree/main/packages/snap"
   },
   "source": {
-    "shasum": "qnUOGuL7Ux8ukMnMsyO9k4WW7MKx4Gi9iQcI8VxWbmA=",
+    "shasum": "2XqEcW6BENHBRQGN2c+k7BkkvvE80G1alQ0feAZ43aI=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
-        "iconPath": "img/IDriss_Brandmark.svg",
-        "packageName": "idriss-multi-resolver",
+        "iconPath": "img/logo.svg",
+        "packageName": "idriss-snap",
         "registry": "https://registry.npmjs.org/"
       }
     }
