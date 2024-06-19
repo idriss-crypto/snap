@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Use your favorite name services in MetaMask",
   "proposedName": "Web3 Address Book",
   "repository": {
@@ -7,7 +7,7 @@
     "url": "https://github.com/idriss-crypto/snap/tree/main/packages/snap"
   },
   "source": {
-    "shasum": "1e2UzX6CwxCNj3Qwz67K6nuEbMF2k3HIlE2AteVXYK4=",
+    "shasum": "e62eZBXNxmhAJNEekne9FE4al/PwbyFoesoGWgHptGM=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
