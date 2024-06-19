@@ -1,10 +1,10 @@
 {
-  "name": "idriss-snap",
+  "name": "@idriss-crypto/snap",
   "version": "0.1.0",
   "description": "Use your favorite name services in MetaMask",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lennardevertz/snap/tree/main/packages/snap"
+    "url": "https://github.com/idriss-crypto/snap/tree/main/packages/snap"
   },
   "license": "MIT-0",
   "main": "./dist/bundle.js",

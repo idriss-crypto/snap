@@ -4,15 +4,15 @@
   "proposedName": "Web3 Address Book",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lennardevertz/snap/tree/main/packages/snap"
+    "url": "https://github.com/idriss-crypto/snap/tree/main/packages/snap"
   },
   "source": {
-    "shasum": "2XqEcW6BENHBRQGN2c+k7BkkvvE80G1alQ0feAZ43aI=",
+    "shasum": "1e2UzX6CwxCNj3Qwz67K6nuEbMF2k3HIlE2AteVXYK4=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
         "iconPath": "img/logo.svg",
-        "packageName": "idriss-snap",
+        "packageName": "@idriss-crypto/snap",
         "registry": "https://registry.npmjs.org/"
       }
     }
