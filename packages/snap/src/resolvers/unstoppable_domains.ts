@@ -9,14 +9,18 @@ import { BASE_API_URL } from '../constants';
  */
 export async function resolveUnstoppableDomain(
   domain: string,
-): Promise<{ resolvedAddress: string; protocol: string }[]> {
+): Promise<
+  { resolvedAddress: string; protocol: string; domainName: string }[]
+> {
   const response = await fetch(
     `${BASE_API_URL}resolve-unstoppable-domains?domain=${domain}`,
   );
   const data = await response.json();
   const resolvedAddress = data.records['crypto.ETH.address'] as string;
   if (resolvedAddress) {
-    return [{ resolvedAddress, protocol: 'Unstoppable Domains' }];
+    return [
+      { resolvedAddress, protocol: 'Unstoppable Domains', domainName: domain },
+    ];
   }
   return [];
 }

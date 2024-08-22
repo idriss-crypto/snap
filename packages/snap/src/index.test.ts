@@ -41,6 +41,7 @@ describe('onNameLookup', () => {
           {
             resolvedAddress: TWITTER_ADDRESS_MOCK,
             protocol: 'IDriss',
+            domainName: TWITTER_MOCK,
           },
         ],
       });
@@ -57,6 +58,7 @@ describe('onNameLookup', () => {
           {
             resolvedAddress: MAIL_ADDRESS_MOCK,
             protocol: 'IDriss',
+            domainName: MAIL_MOCK,
           },
         ],
       });
@@ -84,6 +86,7 @@ describe('onNameLookup', () => {
           {
             resolvedAddress: UD_ADDRESS_MOCK,
             protocol: 'Unstoppable Domains',
+            domainName: UD_DOMAIN_MOCK,
           },
         ],
       });
@@ -111,6 +114,7 @@ describe('onNameLookup', () => {
           {
             resolvedAddress: ENS_ADDRESS_MOCK,
             protocol: 'ENS',
+            domainName: ENS_DOMAIN_MOCK,
           },
         ],
       });
@@ -138,6 +142,7 @@ describe('onNameLookup', () => {
           {
             resolvedAddress: FARCASTER_ADDRESS_MOCK,
             protocol: 'Farcaster',
+            domainName: FARCASTER_DOMAIN_MOCK,
           },
         ],
       });
@@ -165,6 +170,7 @@ describe('onNameLookup', () => {
           {
             resolvedAddress: LENS_ADDRESS_MOCK,
             protocol: 'Lens',
+            domainName: LENS_DOMAIN_MOCK,
           },
         ],
       });

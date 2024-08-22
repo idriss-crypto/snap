@@ -9,7 +9,9 @@ import { BASE_API_URL } from '../constants';
  */
 export async function resolveFarcasterName(
   domain: string,
-): Promise<{ resolvedAddress: string; protocol: string }[]> {
+): Promise<
+  { resolvedAddress: string; protocol: string; domainName: string }[]
+> {
   try {
     let userFID: string;
     let connectedAddress = '';
@@ -45,7 +47,13 @@ export async function resolveFarcasterName(
     }
 
     if (connectedAddress) {
-      return [{ resolvedAddress: connectedAddress, protocol: 'Farcaster' }];
+      return [
+        {
+          resolvedAddress: connectedAddress,
+          protocol: 'Farcaster',
+          domainName: domain,
+        },
+      ];
     }
     return [];
   } catch (error) {

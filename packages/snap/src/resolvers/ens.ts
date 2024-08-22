@@ -14,7 +14,9 @@ const provider = new JsonRpcProvider(ETHEREUM_RPC_URL);
  */
 export async function resolveENS(
   domain: string,
-): Promise<{ resolvedAddress: string; protocol: string }[]> {
+): Promise<
+  { resolvedAddress: string; protocol: string; domainName: string }[]
+> {
   const resolvedENS = await provider.resolveName(domain);
   if (!resolvedENS) {
     return [];
@@ -28,5 +30,7 @@ export async function resolveENS(
     console.log('Error resolving ens:', error);
     return [];
   }
-  return [{ resolvedAddress: resolvedENS, protocol: 'ENS' }];
+  return [
+    { resolvedAddress: resolvedENS, protocol: 'ENS', domainName: domain },
+  ];
 }

@@ -13,7 +13,9 @@ const client = new LensClient({
  */
 export async function resolveLensProfile(
   domain: string,
-): Promise<{ resolvedAddress: string; protocol: string }[]> {
+): Promise<
+  { resolvedAddress: string; protocol: string; domainName: string }[]
+> {
   try {
     const handle = domain.replace('@', '').replace('.lens', '');
 
@@ -22,7 +24,9 @@ export async function resolveLensProfile(
     // Resolve the address using LensClient
     const address = await client.handle.resolveAddress({ handle: lensHandle });
     if (address) {
-      return [{ resolvedAddress: address, protocol: 'Lens' }];
+      return [
+        { resolvedAddress: address, protocol: 'Lens', domainName: domain },
+      ];
     }
     return [];
   } catch (error) {
