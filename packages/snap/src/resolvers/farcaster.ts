@@ -18,7 +18,8 @@ export async function resolveFarcasterName(
     const handle = domain
       .replace('@', '')
       .replace('.fc', '')
-      .replace('.farcaster', '');
+      .replace('.farcaster', '')
+      .replace('.eth', '');
 
     const FID_URL = `https://fnames.farcaster.xyz/transfers/current?name=${handle}`;
     try {
@@ -33,7 +34,7 @@ export async function resolveFarcasterName(
       return [];
     }
 
-    const ADDRESS_URL = `${BASE_API_URL}get-connected-addresses?fid=${userFID}`;
+    const ADDRESS_URL = `${BASE_API_URL}/snap/get-connected-addresses?fid=${userFID}`;
     const addressResponse = await fetch(ADDRESS_URL);
     const addressData = await addressResponse.json();
     const { result } = addressData;

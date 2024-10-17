@@ -1,4 +1,4 @@
-# IDriss Multi Resolver Snap
+# Web3 Address Book Snap
 
 This snap can be used to resolve several naming services in the sending input field of your MetaMask wallet. 
 
