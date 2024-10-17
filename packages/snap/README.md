@@ -10,6 +10,13 @@ It supports resolution of
 4. Unstoppable Domains
 5. ENS domains on networks other than Ethereum Mainnet
 
+Supported formats:
+1. IDriss: Registered Twitter handles `@<name>`
+2. Facraster: `<name>.fc`, or `<name>.farcaster`
+3. Lens: `<name>.lens`
+4. UD: any registered UD
+5. ENS: Any registered ENS, given it does not resolve to a contract address
+
 ## Testing
 
 The snap comes with some basic tests, to demonstrate a happy and failing path for each resolution service. 
