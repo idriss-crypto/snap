@@ -3,11 +3,11 @@ import type { ChainId } from '@metamask/snaps-sdk';
 
 import { onNameLookup } from '.';
 
-const TWITTER_MOCK = '@IDriss_xyz';
+const TWITTER_MOCK = 'IDriss_xyz.twitter';
 const TWITTER_ADDRESS_MOCK = '0x5ABca791C22E7f99237fCC04639E094Ffa0cCce9';
 const MAIL_MOCK = 'hello@idriss.xyz';
 const MAIL_ADDRESS_MOCK = '0x11E9F9344A9720d2B2B5F0753225bb805161139B';
-const TWITTER_MOCK_INVALID = '@vitalikbuterin';
+const TWITTER_MOCK_INVALID = 'vitalikbuterin.x';
 
 const UD_DOMAIN_MOCK = 'matt.crypto';
 const UD_DOMAIN_MOCK_WRONG = 'mat.crypto';
@@ -19,7 +19,7 @@ const ENS_DOMAIN_MOCK_CONTRACT = 'gitcoin.eth';
 const ENS_ADDRESS_MOCK = '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045';
 const ENS_CHAIN_ID_MOCK = 'eip155:137' as ChainId;
 
-const FARCASTER_DOMAIN_MOCK = 'dwr.farcaster';
+const FARCASTER_DOMAIN_MOCK = 'dwr.eth.farcaster';
 const FARCASTER_DOMAIN_MOCK_NO_ADDRESS = 'nonexistantaccount.farcaster';
 const FARCASTER_ADDRESS_MOCK = '0xd7029bdea1c17493893aafe29aad69ef892b8ff2';
 
@@ -40,7 +40,7 @@ describe('onNameLookup', () => {
         resolvedAddresses: [
           {
             resolvedAddress: TWITTER_ADDRESS_MOCK,
-            protocol: 'IDriss',
+            protocol: 'X (Twitter)',
             domainName: TWITTER_MOCK,
           },
         ],
@@ -57,7 +57,7 @@ describe('onNameLookup', () => {
         resolvedAddresses: [
           {
             resolvedAddress: MAIL_ADDRESS_MOCK,
-            protocol: 'IDriss',
+            protocol: 'Email',
             domainName: MAIL_MOCK,
           },
         ],

@@ -7,7 +7,7 @@
     "url": "https://github.com/idriss-crypto/snap/tree/main/packages/snap"
   },
   "source": {
-    "shasum": "9a+ZgF4hWDGgYEAjyEbg0hxTU/COftFoCfH7X3APF3A=",
+    "shasum": "jQRz6xTMZkvAIKyiDhlg+jfSsGovfrwf5Dzz6YZTcUA=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
@@ -19,7 +19,9 @@
   },
   "initialPermissions": {
     "endowment:name-lookup": {},
-    "endowment:network-access": {}
+    "endowment:network-access": {},
+    "endowment:lifecycle-hooks": {},
+    "snap_dialog": {}
   },
   "manifestVersion": "0.1"
 }

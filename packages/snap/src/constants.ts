@@ -10,7 +10,6 @@ export const IDRISS_REGISTRY_RESOLVER =
 export const REG_PH =
   /^(\+\(?\d{1,4}\s?)\)?-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}/u;
 export const REG_M = /^[\w.-]+@[\d.A-Za-z-]+\.[A-Za-z]{2,}/u;
-export const REG_T = /^@\S+/u;
 
 export const WALLET_TAGS = [
   {

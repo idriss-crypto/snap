@@ -32,7 +32,7 @@ export async function resolveIDriss(
 ): Promise<
   { resolvedAddress: string; protocol: string; domainName: string }[]
 > {
-  const identifier = await transformIdentifier(userInput);
+  const { identifier, type } = await transformIdentifier(userInput);
   const filteredWalletTags = filterWalletTags(resolveOptions);
 
   const digestPromises = filteredWalletTags.map(
@@ -77,7 +77,7 @@ export async function resolveIDriss(
   return [
     {
       resolvedAddress: resolvedIDriss,
-      protocol: 'IDriss',
+      protocol: type,
       domainName: userInput,
     },
   ];

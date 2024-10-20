@@ -1,7 +1,7 @@
 import { sha256 } from '@noble/hashes/sha256';
 import { bytesToHex } from '@noble/hashes/utils';
 
-import { REG_PH, REG_M, REG_T, BASE_API_URL, WALLET_TAGS } from './constants';
+import { REG_PH, REG_M, BASE_API_URL, WALLET_TAGS } from './constants';
 import type { ResolveOptions } from './types';
 
 const toTitleCase = (input: string) => {
@@ -10,13 +10,13 @@ const toTitleCase = (input: string) => {
 
 const matchInput = (input: string) => {
   if (REG_PH.test(input)) {
-    return 'phone';
+    return 'Phone';
   }
   if (REG_M.test(input)) {
-    return 'mail';
+    return 'Email';
   }
-  if (REG_T.test(input)) {
-    return 'twitter';
+  if (input.endsWith('.x') || input.endsWith('.twitter')) {
+    return 'X (Twitter)';
   }
   return null;
 };
@@ -40,6 +40,7 @@ const getTwitterID = async (inputCombination: string): Promise<string> => {
     );
   }
   const json = await response.json();
+
   return json.id;
 };
 
@@ -53,19 +54,20 @@ export const transformIdentifier = async (input: string) => {
     );
   }
 
-  if (inputType === 'phone') {
-    return convertPhone(identifier);
+  if (inputType === 'Phone') {
+    return { identifier: convertPhone(identifier), type: inputType };
   }
 
-  if (inputType === 'twitter') {
-    const maybeTwitterIdentifier = await getTwitterID(identifier);
+  if (inputType === 'X (Twitter)') {
+    const cleanTwitter = identifier.replace('.x', '').replace('.twitter', '');
+    const maybeTwitterIdentifier = await getTwitterID(cleanTwitter);
     if (maybeTwitterIdentifier === 'Not found') {
       throw new Error('Twitter handle not found.');
     }
-    return maybeTwitterIdentifier;
+    return { identifier: maybeTwitterIdentifier, type: inputType };
   }
 
-  return input;
+  return { identifier: input, type: inputType };
 };
 
 export const filterWalletTags = ({
